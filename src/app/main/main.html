@@ -1,7 +1,7 @@
 <div id="reckoning-desktop" layout-fill layout="column">
     <header ng-include="'components/navbar/navbar.html'"></header>
     <md-whiteframe class="md-whiteframe-z2" flex>
-        <md-toolbar md-theme="secondary" flex>
+        <md-toolbar md-theme="secondary">
             <div class="md-toolbar-tools">
                 <h2>
                     <span>Recent Clients</span>
@@ -9,18 +9,15 @@
             </div>
         </md-toolbar>
 
-        <md-content class="md-padding" flex>
+        <md-content layout-fill>
             <md-list class="reckoning-list">
-                <md-item ng-repeat="client in recentClients">
+                <md-item ng-repeat="client in data.recentClients">
                     <md-item-content>
-                        <div class="md-tile-left">
-                            <img ng-src="{{item.face}}" alt="{{item.who}}" class="face">
-                        </div>
                         <div class="md-tile-content">
-                            <h3>{{item.what}}</h3>
-                            <h4>{{item.who}}</h4>
+                            <h3>{{client.what}}</h3>
+                            <h4>{{client.who}}</h4>
                             <p>
-                                {{item.notes}}
+                                {{client.notes}}
                             </p>
                         </div>
                     </md-item-content>
@@ -29,7 +26,7 @@
             </md-list>
         </md-content>
 
-        <md-toolbar md-theme="secondary" class="md-hue-1" flex>
+        <md-toolbar md-theme="secondary" class="md-hue-1">
             <h3 class="md-toolbar-tools" layout-align="end center">
                 <md-button md-theme="secondary-dark"
                            class="md-raised md-primary md-hue-2"
@@ -47,16 +44,16 @@
             </div>
         </md-toolbar>
 
-        <md-content class="md-padding">
-            <md-list>
-                <md-item ng-repeat="invoice in recentInvoices">
+        <md-content>
+            <md-list class="reckoning-list">
+                <md-item ng-repeat="invoice in data.recentInvoices">
                     <md-item-content>
                         <div class="md-tile-left">
                             <img ng-src="{{item.face}}" alt="{{item.who}}" class="face">
                         </div>
                         <div class="md-tile-content">
-                            <h3>{{item.what}}</h3>
-                            <h4>{{item.who}}</h4>
+                            <h3>{{invoice.what}}</h3>
+                            <h4>{{invoice.who}}</h4>
                             <p>
                                 {{item.notes}}
                             </p>
@@ -65,19 +62,19 @@
                     <md-divider inset></md-divider>
                 </md-item>
             </md-list>
+
         </md-content>
 
         <md-toolbar md-theme="secondary" class="md-hue-1">
             <h3 class="md-toolbar-tools md-toolbar-tools-bottom" layout-align="end center">
                 <md-button md-theme="secondary-dark"
                            class="md-raised md-primary md-hue-2"
-
                            ng-href="/#/invoices">All Invoices&hellip;</md-button>
             </h3>
         </md-toolbar>
     </md-whiteframe>
 
-    
+
     <footer>
         <md-toolbar layout="row" layout-align="center center">
             &copy; 2015 Waterside Development (UK) Ltd. - Most Rights Reserved

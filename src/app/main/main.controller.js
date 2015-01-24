@@ -3,13 +3,35 @@
 angular.module('reckoning')
     .controller('MainCtrl', function ($scope) {
         $scope.data = {
+            recentClients: [
+                {
+                    who: 'me',
+                    what: 'stuff'
+                },
+                {
+                    who: 'you',
+                    what: ' more stuff'
+                },
+                {
+                    who: 'them',
+                    what: ' things without stuff'
+                },
+                {
+                    who: 'me',
+                    what: 'stuff'
+                },
+                {
+                    who: 'you',
+                    what: ' more stuff'
+                },
+                {
+                    who: 'them',
+                    what: ' things without stuff'
+                }
+            ],
+            recentInvoices: {
+
+            },
             selectedIndex: 1
         };
-        $scope.next = function() {
-            $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2) ;
-        };
-        $scope.previous = function() {
-            $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
-        };
-        console.log($scope);
     });
