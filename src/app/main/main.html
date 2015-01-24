@@ -2,73 +2,73 @@
 
     <!--<header ng-include="'components/navbar/navbar.html'"></header>-->
 
-    <md-content>
-
-        <div layout="column" layout-fill>
-
-        </div>
-        <div class="techs" layout-align="center">
-            <md-card ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-                <div class="thumbnail">
-                    <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-
-                    <div class="caption">
-                        <h3>{{awesomeThing.title}}</h3>
-
-                        <p>{{awesomeThing.description}}</p>
-
-                        <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-                    </div>
-                </div>
-            </md-card>
-        </div>
-    </md-content>
-
-    <footer>
-        <md-toolbar layout="row" layout-align="center center">
-            <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+    <md-whiteframe class="md-whiteframe-z5">
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Clients</span>
+                </h3>
+            </div>
         </md-toolbar>
-    </footer>
+        <md-content style="height: 360px;">
+            SPOOGE
+        </md-content>
+    </md-whiteframe>
+
+    <md-whiteframe class="md-whiteframe-z5">
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Invoices</span>
+                </h3>
+            </div>
+        </md-toolbar>
+        <md-content style="height: 360px;">
+            SPOOGE
+        </md-content>
+    </md-whiteframe>
+
+    <!--<footer>-->
+        <!--<md-toolbar layout="row" layout-align="center center">-->
+            <!--<p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>-->
+        <!--</md-toolbar>-->
+    <!--</footer>-->
 
 </div>
-
 <div layout="horizontal" layout-fill>
 
-    <header ng-include="'components/navbar/navbar.html'"></header>
+    <!--<header ng-include="'components/navbar/navbar.html'"></header>-->
 
-    <md-content>
-        <section class="invoices">
-            <h1>'Allo, 'Allo!</h1>
-
-            <p class="lead">
-                <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-                Always a pleasure scaffolding your apps.
-            </p>
-
-            <p><a class="btn" ng-href="#">Splendid!</a></p>
-        </section>
-
-        <div class="techs" layout-align="center">
-            <md-card ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-                <div class="thumbnail">
-                    <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-
-                    <div class="caption">
-                        <h3>{{awesomeThing.title}}</h3>
-
-                        <p>{{awesomeThing.description}}</p>
-
-                        <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-                    </div>
-                </div>
-            </md-card>
-        </div>
-    </md-content>
-
-    <footer>
-        <md-toolbar layout="row" layout-align="center center">
-            <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+    <md-whiteframe class="md-whiteframe-z5" layout="column">
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Clients</span>
+                </h3>
+            </div>
         </md-toolbar>
-    </footer>
+        <md-content style="width: 50px;">
+            SPOOGE
+        </md-content>
+    </md-whiteframe>
+
+    <md-whiteframe class="md-whiteframe-z5" layout="column">
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Invoices</span>
+                </h3>
+            </div>
+        </md-toolbar>
+        <md-content style="height: 360px;">
+            SPOOGE
+        </md-content>
+    </md-whiteframe>
+
+    <!--<footer>-->
+    <!--<md-toolbar layout="row" layout-align="center center">-->
+    <!--<p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>-->
+    <!--</md-toolbar>-->
+    <!--</footer>-->
 
 </div>
