@@ -1,39 +1,76 @@
-<div layout="vertical" id="reckoning-desktop" layout-fill>
+<div layout="column" id="reckoning-desktop" layout-fill>
 
-    <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
-
-        <md-tabs class="md-accent" selected="data.selectedIndex">
-
-            <md-tab id="tab1" aria-controls="tab1-content">
-                My Clients
-            </md-tab>
-
-            <md-tab id="tab2" aria-controls="tab2-content">
-                My Invoices
-            </md-tab>
-
-        </md-tabs>
-
-        <ng-switch on="data.selectedIndex" class="tabpanel-container">
-
-            <div role="tabpanel" id="tab1-content" aria-labelledby="tab1" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()">
-                View for Item #1<br/>
-                data.selectedIndex = 0
+    <md-whiteframe class="md-whiteframe-z2" flex>
+        <md-toolbar class="md-hue-1">
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Recent Clients</span>
+                </h3>
             </div>
+        </md-toolbar>
 
-            <div role="tabpanel" id="tab2-content" aria-labelledby="tab2" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()">
-                View for #2<br/>
-                data.selectedIndex = 1
-            </div>
+        <md-content class="md-padding" flex>
+            <md-list>
+                <md-item ng-repeat="client in recentClients">
+                    <md-item-content>
+                        <div class="md-tile-left">
+                            <img ng-src="{{item.face}}" alt="{{item.who}}" class="face">
+                        </div>
+                        <div class="md-tile-content">
+                            <h3>{{item.what}}</h3>
+                            <h4>{{item.who}}</h4>
+                            <p>
+                                {{item.notes}}
+                            </p>
+                        </div>
+                    </md-item-content>
+                    <md-divider inset></md-divider>
+                </md-item>
+            </md-list>
+        </md-content>
 
-        </ng-switch>
-
+        <md-toolbar class="md-warn md-hue-3">
+            <span flex></span>
+            <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+                <span class="md-flex">asdasdasd)</span>
+            </h2>
+        </md-toolbar>
     </md-whiteframe>
 
-    <footer>
-        <md-toolbar layout="row" layout-align="center center">
-            <p>&copy; 2015 Waterside Development (UK) Ltd.
+    <md-whiteframe class="md-whiteframe-z2" flex>
+        <md-toolbar class="md-hue-1">
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Recent Invoices</span>
+                </h3>
+            </div>
         </md-toolbar>
-    </footer>
 
+        <md-content class="md-padding">
+            <md-list>
+                <md-item ng-repeat="invoice in recentInvoices">
+                    <md-item-content>
+                        <div class="md-tile-left">
+                            <img ng-src="{{item.face}}" alt="{{item.who}}" class="face">
+                        </div>
+                        <div class="md-tile-content">
+                            <h3>{{item.what}}</h3>
+                            <h4>{{item.who}}</h4>
+                            <p>
+                                {{item.notes}}
+                            </p>
+                        </div>
+                    </md-item-content>
+                    <md-divider inset></md-divider>
+                </md-item>
+            </md-list>
+        </md-content>
+
+        <md-toolbar class="md-warn md-hue-3">
+            <span flex></span>
+            <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+                <span class="md-flex">asdasdasd)</span>
+            </h2>
+        </md-toolbar>
+    </md-whiteframe>
 </div>

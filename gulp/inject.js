@@ -12,7 +12,8 @@ gulp.task('inject', ['styles'], function () {
 
   var injectStyles = gulp.src([
     paths.tmp + '/serve/{app,components}/**/*.css',
-    '!' + paths.tmp + '/serve/app/vendor.css'
+    '!' + paths.tmp + '/serve/app/vendor.css',
+    '/bower_components/angular-material/themes/*.css'
   ], { read: false });
 
   var injectScripts = gulp.src([
