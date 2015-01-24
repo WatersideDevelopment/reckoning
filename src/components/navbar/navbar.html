@@ -1,13 +1,15 @@
 <md-toolbar layout="row" ng-controller="NavbarCtrl" class="md-hue-2">
 
-    <section flex-order="1" flex="33" layout="row">
-        <md-button href="#">Back</md-button>
+    <section flex-order="1" flex="33" layout="row" layout-align="start center">
+        <md-button href="#" hide-md>Back</md-button>
     </section>
 
     <section flex-order="2" flex="33" layout="row" layout-align="center center">
         <md-button href="#" >Reckoning</md-button>
     </section>
 <!--
-    <md-button href="#">Current date: {{ date | date:'yyyy-MM-dd' }}</md-button>
+    <section flex-order="3" flex="33" layout="row" layout-align="end center">
+        <md-button href="#">Current date: {{ date | date:'yyyy-MM-dd' }}</md-button>
+    </section>
 -->
 </md-toolbar>

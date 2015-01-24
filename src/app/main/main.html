@@ -1,16 +1,16 @@
-<div layout="column" id="reckoning-desktop" layout-fill>
-
+<div id="reckoning-desktop" layout-fill layout="column">
+    <header ng-include="'components/navbar/navbar.html'"></header>
     <md-whiteframe class="md-whiteframe-z2" flex>
-        <md-toolbar class="md-hue-1">
+        <md-toolbar md-theme="secondary" flex>
             <div class="md-toolbar-tools">
-                <h3>
+                <h2>
                     <span>Recent Clients</span>
-                </h3>
+                </h2>
             </div>
         </md-toolbar>
 
         <md-content class="md-padding" flex>
-            <md-list>
+            <md-list class="reckoning-list">
                 <md-item ng-repeat="client in recentClients">
                     <md-item-content>
                         <div class="md-tile-left">
@@ -29,16 +29,17 @@
             </md-list>
         </md-content>
 
-        <md-toolbar class="md-warn md-hue-3">
-            <span flex></span>
-            <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
-                <span class="md-flex">asdasdasd)</span>
-            </h2>
+        <md-toolbar md-theme="secondary" class="md-hue-1" flex>
+            <h3 class="md-toolbar-tools" layout-align="end center">
+                <md-button md-theme="secondary-dark"
+                           class="md-raised md-primary md-hue-2"
+                           ng-href="/#/clients">All Clients&hellip;</md-button>
+            </h3>
         </md-toolbar>
     </md-whiteframe>
 
     <md-whiteframe class="md-whiteframe-z2" flex>
-        <md-toolbar class="md-hue-1">
+        <md-toolbar md-theme="secondary">
             <div class="md-toolbar-tools">
                 <h3>
                     <span>Recent Invoices</span>
@@ -66,11 +67,20 @@
             </md-list>
         </md-content>
 
-        <md-toolbar class="md-warn md-hue-3">
-            <span flex></span>
-            <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
-                <span class="md-flex">asdasdasd)</span>
-            </h2>
+        <md-toolbar md-theme="secondary" class="md-hue-1">
+            <h3 class="md-toolbar-tools md-toolbar-tools-bottom" layout-align="end center">
+                <md-button md-theme="secondary-dark"
+                           class="md-raised md-primary md-hue-2"
+
+                           ng-href="/#/invoices">All Invoices&hellip;</md-button>
+            </h3>
         </md-toolbar>
     </md-whiteframe>
+
+    
+    <footer>
+        <md-toolbar layout="row" layout-align="center center">
+            &copy; 2015 Waterside Development (UK) Ltd. - Most Rights Reserved
+        </md-toolbar>
+    </footer>
 </div>

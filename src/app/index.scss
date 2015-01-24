@@ -8,7 +8,16 @@ md-whiteframe {
 }
 
 #reckoning-app {
-  min-height: 100%;
+  height: 100%;
+}
+
+#reckoning-desktop {
+  md-whiteframe {
+    display: block;
+    .reckoning-list {
+      display: block;
+    }
+  }
 }
 
 // injector
