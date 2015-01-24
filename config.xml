@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="uk.co.watersidedevelopment.reckoning" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HelloCordova</name>
+    <description>
+		A sample Angular Material application for creating and managing client invoices
+    </description>
+    <author email="hello@watersidedevelopment.co.uk"
+		href="http://www.watersidedevelopment.co.uk">
+    	Waterside Development (UK) Ltd.
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
