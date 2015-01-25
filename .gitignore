@@ -1,3 +1,4 @@
+*.log
 .idea/workspace.xml
 node_modules/
 bower_components/
