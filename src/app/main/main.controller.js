@@ -6,7 +6,23 @@ angular.module('reckoning')
             recentClients: [
                 {
                     who: 'me',
-                    what: 'stuff'
+                    what: 'stuff',
+                    notes: 'Bacon Ipsum'
+                },
+                {
+                    who: 'you',
+                    what: ' more stuff',
+                    notes: " I'll be in your neighborhood doing errands"
+                },
+                {
+                    who: 'them',
+                    what: ' things without stuff',
+                    notes: " I'll be in your neighborhood doing errands"
+                },
+                {
+                    who: 'me',
+                    what: 'stuff',
+                    notes: " I'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errands"
                 },
                 {
                     who: 'you',
@@ -18,7 +34,23 @@ angular.module('reckoning')
                 },
                 {
                     who: 'me',
-                    what: 'stuff'
+                    what: 'stuff',
+                    notes: 'Bacon Ipsum'
+                },
+                {
+                    who: 'you',
+                    what: ' more stuff',
+                    notes: " I'll be in your neighborhood doing errands"
+                },
+                {
+                    who: 'them',
+                    what: ' things without stuff',
+                    notes: " I'll be in your neighborhood doing errands"
+                },
+                {
+                    who: 'me',
+                    what: 'stuff',
+                    notes: " I'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errands"
                 },
                 {
                     who: 'you',

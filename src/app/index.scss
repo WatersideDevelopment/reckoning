@@ -18,7 +18,17 @@ md-whiteframe {
       display: block;
     }
   }
+  overflow: hidden;
 }
 
+.scroll-container {
+  background: rgba(238, 232, 170, 0.34);
+
+}
+
+.y-scroll {
+  background: red;
+  overflow: scroll;
+}
 // injector
 // endinjector
