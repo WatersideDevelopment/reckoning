@@ -1,3 +1,4 @@
+*.log
 .idea/workspace.xml
 node_modules/
 bower_components/
@@ -5,5 +6,4 @@ bower_components/
 .tmp/
 www/
 .DS_Store/
-platforms/
 plugins/
