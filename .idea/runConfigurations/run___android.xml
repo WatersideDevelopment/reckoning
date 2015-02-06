@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run - android" type="PhoneGap" factoryName="PhoneGap/Cordova" singleton="true">
+    <option name="myExecutable" value="/usr/local/bin/ionic" />
+    <option name="myWorkDir" value="$PROJECT_DIR$" />
+    <option name="myCommand" value="run" />
+    <option name="myPlatform" value="android" />
+    <option name="hasTarget" value="false" />
+    <option name="target" value="" />
+    <method />
+  </configuration>
+</component>

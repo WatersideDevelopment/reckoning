@@ -4,34 +4,39 @@
         <md-toolbar md-theme="secondary" class="md-hue-1">
             <div class="md-toolbar-tools" layout="row">
                 <h2 flex="75">
-                    <span>Recent Clients</span>
+                        <span>Recent Clients</span>
                 </h2>
                 <span flex></span>
                 <h3 class="md-toolbar-tools" layout-align="end center">
-                    <md-button md-theme="secondary-dark"
-                               class="md-raised md-primary md-hue-2"
-                               ng-href="/#/clients">All Clients&hellip;</md-button>
-                </h3>
+                    <ng-if data.client.length>
 
+                    </ng-if>
+                    <ng-if !data.clients.length>
+                        <md-button md-theme="secondary-dark"
+                                   class="md-raised md-primary md-hue-2"
+                                   ui-sref="newClient">Add First Client</md-button>
+                    </ng-if>
+
+
+                </h3>
             </div>
         </md-toolbar>
         <md-content>
-            <div class="scroll-container">
-                <md-list class="reckoning-list">
-                    <md-item ng-repeat="client in data.recentClients">
-                        <md-item-content>
-                            <div class="md-tile-content">
-                                <h3>{{client.what}}</h3>
-                                <h4>{{client.who}}</h4>
-                                <p>
-                                    {{client.notes}}
-                                </p>
-                            </div>
-                        </md-item-content>
-                        <md-divider inset></md-divider>
-                    </md-item>
-                </md-list>
-            </div>
+            <ng-if !data.clients.length>
+                SILLY JOKE ABOUT SELLING SOMETHING
+            </ng-if>
+            <ng-if data.clients.length>
+                <ng-repeat="client in data.recentClients">
+                    <div class="md-tile-content">
+                        <h3>{{client.what}}</h3>
+                        <h4>{{client.who}}</h4>
+                        <p>
+                            {{client.notes}}
+                        </p>
+                    </div>
+                    <md-divider inset></md-divider>
+                </ng-repeat>
+            </ng-if>
         </md-content>
     </md-whiteframe>
 
@@ -46,7 +51,7 @@
                 <h3 class="md-toolbar-tools md-toolbar-tools-bottom" layout-align="end center">
                     <md-button md-theme="secondary-dark"
                                class="md-raised md-primary md-hue-2"
-                               ng-href="/#/invoices">All Invoices&hellip;</md-button>
+                               ui-sref="allClients">All Invoices&hellip;</md-button>
                 </h3>
 
             </div>
@@ -83,7 +88,7 @@
             </span>
             <span flex></span>
             <h4 layout-align="end center" class="md-toolbar-tools">
-                <md-button md-theme="secondary-dark" class="md-raised md-primary md-hue-2" href="http://www.watersidedevelopment.co.uk/?source=reckoning_inapp_more">
+                <md-button md-theme="secondary-dark" class="md-raised md-primary md-hue-2" ng-click="openBrowser()">
                     Show Me More&hellip;
                 </md-button>
             </h4>

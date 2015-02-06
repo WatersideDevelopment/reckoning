@@ -4,6 +4,4 @@ node_modules/
 bower_components/
 .sass-cache/
 .tmp/
-www/
 .DS_Store/
-plugins/

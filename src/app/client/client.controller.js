@@ -2,16 +2,14 @@
 
 angular.module('reckoning')
     .controller('ClientCtrl', function ($scope) {
-        $scope.user = {
-            title: 'Developer',
-            email: 'ipsum@lorem.com',
-            firstName: '',
-            lastName: '' ,
-            company: 'Google' ,
-            address: '1600 Amphitheatre Pkwy' ,
-            city: 'Mountain View' ,
-            state: 'CA' ,
-            biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-            postalCode : '94043'
+        $scope.data = {
+            selectedIndex: 1
         };
+        $scope.next = function() {
+            $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2) ;
+        };
+        $scope.previous = function() {
+            $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
+        };
+        console.log($scope);
     });

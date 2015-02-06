@@ -1,26 +1,36 @@
 'use strict';
 
-angular.module('reckoning', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngRoute', 'ngMaterial', 'ngCordova'])
-    .config(function ($routeProvider) {
-        $routeProvider
-            .when('/', {
+angular.module('reckoning', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngRoute', 'ngMaterial', 'ngCordova', 'js-data', 'ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+        console.log('setting up routes');
+        $stateProvider
+            .state('home', {
+                url: '/',
                 templateUrl: 'app/main/main.html',
                 controller: 'MainCtrl'
             })
-            .when('/clients', {
-                templateUrl: 'app/clients/clients.html',
-                controller: 'ClientsCtrl'
-            })
-            .when('/clients/:id', {
+            .state('newClient', {
+                url: '^/client',
                 templateUrl: 'app/client/client.html',
                 controller: 'ClientCtrl'
             })
-            .otherwise({
-                redirectTo: '/'
-            });
+            .state('allClients', {
+                url: '^/clients',
+                templateUrl: 'app/clients/clients.html',
+                controller: 'ClientsCtrl'
+            })
+            .state('viewClient', {
+                url: '^/client/:id',
+                templateUrl: 'app/client/client.html',
+                controller: 'ClientCtrl'
+            }
+        );
+
+        $urlRouterProvider.otherwise("/");
     })
     .config(function ($mdThemingProvider){
-        console.log($mdThemingProvider);
+
+        console.log('setting up themes');
         $mdThemingProvider.theme('default')
             .primaryPalette('grey', {
                 //'default': '400', // by default use shade 400 from the purple palette for primary intentions
@@ -43,5 +53,12 @@ angular.module('reckoning', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngRoute', 'n
             //    'default': '200' // use shade 200 for default, and keep all other shades the same
             //});
         $mdThemingProvider.theme("secondary-dark", "secondary").dark();
+    })
+    .run(function (DS) {
+        console.log('setting up storage');
+
+        DS.registerAdapter('localstorage', new DSLocalStorageAdapter(), { default: true });
+        DS.defineResource('client');
+        DS.defineResource('invoice');
     })
 ;

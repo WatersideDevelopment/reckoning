@@ -11,5 +11,7 @@ angular.module('reckoning')
         $scope.previous = function() {
             $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
         };
+        console.log('no more clients');
         console.log($scope);
+
     });

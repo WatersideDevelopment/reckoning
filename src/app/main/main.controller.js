@@ -1,69 +1,26 @@
 'use strict';
 
 angular.module('reckoning')
-    .controller('MainCtrl', function ($scope) {
-        $scope.data = {
-            recentClients: [
-                {
-                    who: 'me',
-                    what: 'stuff',
-                    notes: 'Bacon Ipsum'
-                },
-                {
-                    who: 'you',
-                    what: ' more stuff',
-                    notes: " I'll be in your neighborhood doing errands"
-                },
-                {
-                    who: 'them',
-                    what: ' things without stuff',
-                    notes: " I'll be in your neighborhood doing errands"
-                },
-                {
-                    who: 'me',
-                    what: 'stuff',
-                    notes: " I'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errands"
-                },
-                {
-                    who: 'you',
-                    what: ' more stuff'
-                },
-                {
-                    who: 'them',
-                    what: ' things without stuff'
-                },
-                {
-                    who: 'me',
-                    what: 'stuff',
-                    notes: 'Bacon Ipsum'
-                },
-                {
-                    who: 'you',
-                    what: ' more stuff',
-                    notes: " I'll be in your neighborhood doing errands"
-                },
-                {
-                    who: 'them',
-                    what: ' things without stuff',
-                    notes: " I'll be in your neighborhood doing errands"
-                },
-                {
-                    who: 'me',
-                    what: 'stuff',
-                    notes: " I'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errandsI'll be in your neighborhood doing errands"
-                },
-                {
-                    who: 'you',
-                    what: ' more stuff'
-                },
-                {
-                    who: 'them',
-                    what: ' things without stuff'
-                }
-            ],
-            recentInvoices: {
+    .controller('MainCtrl', function ($scope, DS, $cordovaInAppBrowser) {
+        console.log('getting everytyhing');
+        console.log(DS);
+        DS.findAll('client').then(function (clients) {
+            $scope.clients = clients;
+        });
+        DS.findAll('invoice').then(function (invoices) {
+            // all the books you have in Firebase
+            $scope.invoices = invoices;
+        });
 
-            },
-            selectedIndex: 1
+        $scope.openBrowser = function(url) {
+            if(!url) url = "http://www.watersidedevelopment.co.uk/?source=co.uk.watersidedevelopment.reckoning.home.footer";
+
+            $cordovaInAppBrowser.open(url, '_blank', {
+                location: 'no',
+                clearcache: 'yes',
+                toolbar: 'no'
+            });
         };
+
+        console.log('Main Controller done!')
     });
