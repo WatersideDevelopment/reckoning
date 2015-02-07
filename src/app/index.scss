@@ -1,3 +1,4 @@
+
 md-whiteframe {
   background: #fff;
   display: block;
@@ -26,9 +27,13 @@ md-whiteframe {
 
 }
 
-.y-scroll {
-  background: red;
-  overflow: scroll;
+.paper-heading {
+  background-color: #fffff0 !important;
 }
+
+.paper-content {
+  background-color: #fcfffa !important;
+}
+
 // injector
 // endinjector

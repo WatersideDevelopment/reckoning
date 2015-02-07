@@ -45,14 +45,19 @@ angular.module('reckoning', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngRoute', 'n
             //});
         $mdThemingProvider.theme("default-dark", "default").dark();
         $mdThemingProvider.theme('secondary')
-            .primaryPalette('indigo', {
-            })
-            // If you specify less than all of the keys, it will inherit from the
-            // default shades
-            //.accentPalette('blue', {
-            //    'default': '200' // use shade 200 for default, and keep all other shades the same
-            //});
+            .primaryPalette('indigo');
         $mdThemingProvider.theme("secondary-dark", "secondary").dark();
+        $mdThemingProvider.theme('paper')
+            .primaryPalette('yellow')
+            .accentPalette('orange');
+        // If you specify less than all of the keys, it will inherit from the
+        // default shades
+        //.accentPalette('blue', {
+        //    'default': '200' // use shade 200 for default, and keep all other shades the same
+        //});
+        $mdThemingProvider.theme("paper-dark", "paper").dark();
+
+        console.log($mdThemingProvider);
     })
     .run(function (DS) {
         console.log('setting up storage');

@@ -1,7 +1,6 @@
-<md-toolbar layout="row" ng-controller="NavbarCtrl" class="md-hue-2">
-
+<md-toolbar layout="row" class="md-hue-2">
     <section flex-order="1" flex="33" layout="row" layout-align="start center">
-        <md-button href="#" hide-md>Back</md-button>
+        <md-button ng-if="back" ui-sref="{{back}}">Back</md-button>
     </section>
 
     <section flex-order="2" flex="33" layout="row" layout-align="center center">
