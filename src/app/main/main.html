@@ -8,35 +8,33 @@
                 </h2>
                 <span flex></span>
                 <h3 class="md-toolbar-tools" layout-align="end center">
-                    <ng-if data.client.length>
-
-                    </ng-if>
-                    <ng-if !data.clients.length>
+                    <div ng-show="latestClients.length>0">
+                        <md-button md-theme="secondary-dark"
+                                   class="md-raised md-primary md-hue-2"
+                                   ui-sref="newClient">All Client</md-button>
+                    </div>
+                    <div ng-show="latestClients.length==0">
                         <md-button md-theme="secondary-dark"
                                    class="md-raised md-primary md-hue-2"
                                    ui-sref="newClient">Add First Client</md-button>
-                    </ng-if>
-
-
+                    </div>
                 </h3>
             </div>
         </md-toolbar>
         <md-content>
-            <ng-if !data.clients.length>
+            <i class="reckoning-icon reckoning-icon-index reckoning-icon-clients"></i>
+            <div ng-show="latestClients.length==0">
                 SILLY JOKE ABOUT SELLING SOMETHING
-            </ng-if>
-            <ng-if data.clients.length>
-                <ng-repeat="client in data.recentClients">
-                    <div class="md-tile-content">
-                        <h3>{{client.what}}</h3>
-                        <h4>{{client.who}}</h4>
-                        <p>
-                            {{client.notes}}
-                        </p>
-                    </div>
-                    <md-divider inset></md-divider>
-                </ng-repeat>
-            </ng-if>
+            </div>
+            <div class='md-whiteframe-z1 reckoning-card-small' ng-repeat="client in latestClients">
+                <i class="reckoning-icon">
+                    <img ng-if="client.logo" src="{{ client.logo }}">
+                </i>
+                <div class="md-tile-content">
+                    <h3>{{client.name}}</h3>
+                    <h4>{{client.email}}</h4>
+                </div>
+            </div>
         </md-content>
     </md-whiteframe>
 
@@ -48,36 +46,42 @@
                     <span>Recent Invoices</span>
                 </h2>
                 <span flex></span>
-                <h3 class="md-toolbar-tools md-toolbar-tools-bottom" layout-align="end center">
-                    <md-button md-theme="secondary-dark"
-                               class="md-raised md-primary md-hue-2"
-                               ui-sref="allClients">All Invoices&hellip;</md-button>
+                <h3 class="md-toolbar-tools" layout-align="end center">
+                    <div ng-show="latestClients.length>0">
+                        <div ng-show="latestInvoices.length>0">
+                            <md-button md-theme="secondary-dark"
+                                       class="md-raised md-primary md-hue-2"
+                                       ui-sref="newClient">All Invoices</md-button>
+                        </div>
+                        <div ng-show="latestInvoices.length==0">
+                            <md-button md-theme="secondary-dark"
+                                       class="md-raised md-primary md-hue-2"
+                                       ui-sref="newClient">Create An Invoice</md-button>
+                        </div>
+                    </div>
+                    <div ng-show="latestClients.length==0">
+                        <md-button md-theme="secondary-dark"
+                                   class="md-raised md-primary md-hue-2"
+                                   ui-sref="newClient"  ng-disabled="true" >Please Add A Client</md-button>
+                    </div>
                 </h3>
-
             </div>
         </md-toolbar>
-
-        <md-content flex layout-fill>
-            <md-list class="reckoning-list">
-                <md-item ng-repeat="invoice in data.recentInvoices">
-                    <md-item-content>
-                        <div class="md-tile-left">
-                            <img ng-src="{{item.face}}" alt="{{item.who}}" class="face">
-                        </div>
-                        <div class="md-tile-content">
-                            <h3>{{invoice.what}}</h3>
-                            <h4>{{invoice.who}}</h4>
-                            <p>
-                                {{item.notes}}
-                            </p>
-                        </div>
-                    </md-item-content>
-                    <md-divider inset></md-divider>
-                </md-item>
-            </md-list>
-
+        <md-content>
+            <i class="reckoning-icon reckoning-icon-index reckoning-icon-invoices"></i>
+            <div ng-show="invoices.length==0">
+                Nowt so pointless as an empty reckoning&hellip;
+            </div>
+            <div class='md-whiteframe-z1 reckoning-card-small' ng-repeat="invoice in invoices">
+                <i class="reckoning-icon">
+                    <img ng-if="invoice.client.logo" src="{{ invoice.client.logo }}">
+                </i>
+                <div class="md-tile-content">
+                    <h3>{{invoice.client.name}}</h3>
+                    <h4>{{invoice.client.email}}</h4>
+                </div>
+            </div>
         </md-content>
-
     </md-whiteframe>
 
 

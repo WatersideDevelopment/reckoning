@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('reckoning', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngRoute', 'ngMaterial', 'ngCordova', 'js-data', 'ui.router'])
+angular.module('reckoning', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngRoute', 'ngMaterial', 'ngCordova',
+                             'js-data', 'ui.router', 'ngMdIcons'])
     .config(function ($stateProvider, $urlRouterProvider) {
         console.log('setting up routes');
         $stateProvider

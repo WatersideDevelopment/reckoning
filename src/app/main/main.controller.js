@@ -4,13 +4,21 @@ angular.module('reckoning')
     .controller('MainCtrl', function ($scope, DS, $cordovaInAppBrowser) {
         console.log('getting everytyhing');
         console.log(DS);
-        DS.findAll('client').then(function (clients) {
-            $scope.clients = clients;
-        });
-        DS.findAll('invoice').then(function (invoices) {
-            // all the books you have in Firebase
-            $scope.invoices = invoices;
-        });
+
+        var latestOptions = {
+            orderBy: ['modifiedAt', 'ASC'],
+            limit: 3
+        };
+
+        DS.findAll('client', latestOptions, $scope, 'latestClients');
+        DS.findAll('invoice', latestOptions, $scope, 'latestClients');
+
+        DS.bindAll('client', latestOptions, $scope, 'latestClients');
+        DS.bindAll('invoice', latestOptions, $scope, 'latestInvoices');
+
+
+
+
 
         $scope.openBrowser = function(url) {
             if(!url) url = "http://www.watersidedevelopment.co.uk/?source=co.uk.watersidedevelopment.reckoning.home.footer";
@@ -21,6 +29,6 @@ angular.module('reckoning')
                 toolbar: 'no'
             });
         };
-
+    console.log($scope);
         console.log('Main Controller done!')
     });
